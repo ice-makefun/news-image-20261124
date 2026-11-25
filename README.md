@@ -4,9 +4,10 @@
 [![rank](https://make.fun/badge/news-image-20261124/ice-makefun/news-image-20261124/rank.svg)](https://make.fun/bounty/news-image-20261124)
 [![reward](https://make.fun/badge/news-image-20261124/ice-makefun/news-image-20261124/reward.svg)](https://make.fun/bounty/news-image-20261124)
 
-One image that sums up the world's news of Tuesday 24 November 2026, drawn
-as a newspaper front page. The program copies the finished image to the
-output directory; run it twice and both runs write the same bytes.
+One image that sums up the world's news of Tuesday 24 November 2026,
+drawn as a newspaper front page. Run the program and it copies the
+finished image to the output directory; run it twice and both runs
+write the same bytes.
 
 ## The day's stories
 
@@ -38,11 +39,11 @@ Tiangong.
 
 ## How it is made
 
-`work/compose.py` draws `frontpage.png` (1024×1024, under 1 MiB) with PIL
-and the system DejaVu fonts — every pixel is drawn programmatically, no
-photograph or downloaded image. `main.ts` (Node 22) copies that file to
-`$MAKEFUN_OUTPUT_DIR/entry.png` after verifying its PNG signature,
-dimensions and IEND trailer.
+`frontpage.png` (1024×1024, under 1 MiB) is drawn by `work/compose.py`
+with PIL and the system DejaVu fonts — every pixel is drawn
+programmatically, no photograph or downloaded image. `main.ts`
+(Node 22) copies that file to `$MAKEFUN_OUTPUT_DIR/entry.png` after
+verifying its PNG signature, dimensions and IEND trailer.
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
